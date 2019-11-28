@@ -23,7 +23,7 @@ public class MainPageLogic {
     public static void pushBlueSubmitButton(WebDriver driver) {
         MainPage.getBlueSubmitButton(driver).submit();
         try {
-            Thread.sleep(2000);
+            Thread.sleep(2500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

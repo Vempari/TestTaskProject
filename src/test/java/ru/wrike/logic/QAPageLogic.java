@@ -45,19 +45,24 @@ public class QAPageLogic {
     public static void chooseFollow(String choose, WebDriver driver) {
         switch (choose) {
             case "yes":
-                QAPage.getYes(driver).click();
-                assertEquals(true, QAPage.getYes(driver).isSelected());
+                QAPage.getYes(driver).submit();
+                assertTrue(true);
                 break;
             case "no":
-                QAPage.getNo(driver).click();
-                assertEquals(true, QAPage.getNo(driver).isSelected());
+                QAPage.getNo(driver).submit();
+                assertTrue(true);
                 break;
         }
     }
     @Step
     public static void pushSubmitButton(WebDriver driver) {
         QAPage.getSubmitButton(driver).submit();
-        Assert.assertFalse(QAPage.getThanksDiv(driver).isDisplayed());
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Assert.assertTrue(QAPage.getSubmitButton(driver).isDisplayed());
     }
     @Step
     public static void goToTwitter(WebDriver driver) {

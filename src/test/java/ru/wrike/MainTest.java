@@ -1,14 +1,13 @@
 package ru.wrike;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.wrike.logic.MainPageLogic;
 import ru.wrike.logic.QAPageLogic;
-import ru.wrike.pages.MainPage;
+
 
 
 public class MainTest {
@@ -27,21 +26,7 @@ public class MainTest {
     }
 
     @Test
-    public void putTheButtonAndMoveToAnotherPage () {
-        MainPageLogic.pushGreenButton(driver);
-        MainPageLogic.fillEmailField("asdasdwpt@wriketask.qaa", driver);
-        MainPageLogic.pushBlueSubmitButton(driver);
-    }
-
-    @Test
-    public void putTheButtonAndFillIncorrectEmail () {
-        MainPageLogic.pushGreenButton(driver);
-        MainPageLogic.fillEmailField("lhasflkh", driver);
-        MainPageLogic.pushBlueSubmitButton(driver);
-    }
-
-    @Test
-    public void doAllAndMoveToTwitter () {
+    public void goToTwitterAfterRegistration () {
         MainPageLogic.pushGreenButton(driver);
         MainPageLogic.fillEmailField("asdasdwpt@wriketask.qaa", driver);
         MainPageLogic.pushBlueSubmitButton(driver);
